@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- PWA 풀스크린 설정 -->
+    <!-- PWA 설정 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -19,47 +19,38 @@
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             height: 100vh;
             overflow: hidden;
-            padding: 20px 15px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
         .title { 
-            font-size: 42px; 
+            font-size: 48px; 
             font-weight: 600; 
         }
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-        .app {
-            height: 85px;
-            background-color: #1c1c1e;
-            border-radius: 18px;
+        .menu {
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            gap: 35px;
+            width: 100%;
+            max-width: 380px;
+        }
+        .menu-item {
+            font-size: 26px;
+            font-weight: 500;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
+            padding: 12px 0;
+            color: #ffffff;
             transition: all 0.2s;
+            cursor: pointer;
         }
-        .app:active {
-            transform: scale(0.92);
-            background-color: #2c2c2e;
-        }
-        .app-name {
-            font-size: 13.5px;
-            font-weight: 600;
-            padding: 0 8px;
-            line-height: 1.3;
+        .menu-item:active {
+            color: #aaaaaa;
+            transform: scale(0.95);
         }
     </style>
 </head>
@@ -68,19 +59,15 @@
         <div class="title">😊</div>
     </div>
 
-    <div class="grid">
-        <div class="app" onclick="openLink('https://www.google.com')"><div class="app-name">CHROME</div></div>
-        <div class="app" onclick="openLink('https://mail.google.com')"><div class="app-name">MAIL</div></div>
-        <div class="app" onclick="openLink('https://web.telegram.org')"><div class="app-name">TELEGRAM</div></div>
-        <div class="app" onclick="openLink('https://x.com')"><div class="app-name">X</div></div>
-
-        <div class="app" onclick="openLink('https://messages.google.com')"><div class="app-name">MESSAGES</div></div>
-        <div class="app" onclick="openLink('tel:')"><div class="app-name">PHONE</div></div>
-        <div class="app" onclick="openLink('#')"><div class="app-name">EVERYDAY</div></div>
-        <div class="app" onclick="openLink('https://tesla.com')"><div class="app-name">TESLA</div></div>
-        
-        <!-- 더 추가하고 싶으면 아래처럼 복사해서 사용하세요 -->
-        <!-- <div class="app" onclick="openLink('URL')"><div class="app-name">이름</div></div> -->
+    <div class="menu">
+        <div class="menu-item" onclick="openLink('https://www.google.com')">CHROME</div>
+        <div class="menu-item" onclick="openLink('https://mail.google.com')">MAIL</div>
+        <div class="menu-item" onclick="openLink('https://web.telegram.org')">TELEGRAM</div>
+        <div class="menu-item" onclick="openLink('https://x.com')">X</div>
+        <div class="menu-item" onclick="openLink('https://messages.google.com')">MESSAGES</div>
+        <div class="menu-item" onclick="openLink('tel:')">PHONE</div>
+        <div class="menu-item" onclick="openLink('#')">EVERYDAY</div>
+        <div class="menu-item" onclick="openLink('https://tesla.com')">TESLA</div>
     </div>
 
     <script>
