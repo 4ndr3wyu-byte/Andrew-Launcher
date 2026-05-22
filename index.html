@@ -26,7 +26,7 @@
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 9px;        /* 줄간격 크게 줄임 */
+            gap: 4px;        /* 줄간격 다시 절반으로 줄임 */
             width: 100%;
             max-width: 380px;
         }
@@ -47,10 +47,10 @@
 </head>
 <body>
     <div class="menu">
-        <div class="menu-item" onclick="openLink('https://calendar.google.com')">달력</div>
+        <div class="menu-item" onclick="openLink('calshow://')">달력</div>
         <div class="menu-item" onclick="openLink('tel:')">폰</div>
         <div class="menu-item" onclick="openLink('sms:')">메세지</div>
-        <div class="menu-item" onclick="openLink('https://web.telegram.org')">텔레그램</div>
+        <div class="menu-item" onclick="openLink('telegram://')">텔레그램</div>
         <div class="menu-item" onclick="openLink('https://tesla.com')">테슬라</div>
         <div class="menu-item" onclick="openLink('shortcuts://run-shortcut?name=퇴근')">퇴근</div>
         <div class="menu-item" onclick="openLink('notes://')">노트</div>
@@ -78,23 +78,7 @@
 
     <script>
         function openLink(url) {
-            if (url === 'tel:') {
-                window.location.href = 'tel:';
-            } else if (url === 'sms:') {
-                window.location.href = 'sms:';
-            } else if (url === 'notes://') {
-                window.location.href = 'notes://';
-            } else if (url === 'App-Prefs:root') {
-                window.location.href = 'App-Prefs:root';
-            } else if (url === 'files://') {
-                window.location.href = 'files://';
-            } else if (url === 'photos://') {
-                window.location.href = 'photos://';
-            } else if (url === 'calculator://') {
-                window.location.href = 'calculator://';
-            } else {
-                window.open(url, '_blank');
-            }
+            window.location.href = url;
         }
     </script>
 </body>
