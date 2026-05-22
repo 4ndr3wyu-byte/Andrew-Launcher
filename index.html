@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- PWA 설정 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-touch-fullscreen" content="yes">
@@ -18,8 +17,8 @@
             color: white;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             height: 100vh;
-            overflow-y: auto;           /* 세로 스크롤 활성화 */
-            padding: 40px 20px 60px;
+            overflow-y: auto;
+            padding: 40px 20px 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,15 +26,15 @@
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 18px;                  /* 줄 간격 50% 줄임 */
+            gap: 9px;        /* 줄간격 크게 줄임 */
             width: 100%;
             max-width: 380px;
         }
         .menu-item {
-            font-size: 17px;            /* 기존 대비 약 65% 크기 */
+            font-size: 17px;
             font-weight: 500;
             text-align: center;
-            padding: 14px 0;
+            padding: 13px 0;
             color: #ffffff;
             transition: all 0.2s;
             cursor: pointer;
@@ -48,23 +47,51 @@
 </head>
 <body>
     <div class="menu">
-        <div class="menu-item" onclick="openLink('https://www.google.com')">CHROME</div>
-        <div class="menu-item" onclick="openLink('https://mail.google.com')">MAIL</div>
-        <div class="menu-item" onclick="openLink('https://web.telegram.org')">TELEGRAM</div>
+        <div class="menu-item" onclick="openLink('https://calendar.google.com')">달력</div>
+        <div class="menu-item" onclick="openLink('tel:')">폰</div>
+        <div class="menu-item" onclick="openLink('sms:')">메세지</div>
+        <div class="menu-item" onclick="openLink('https://web.telegram.org')">텔레그램</div>
+        <div class="menu-item" onclick="openLink('https://tesla.com')">테슬라</div>
+        <div class="menu-item" onclick="openLink('shortcuts://run-shortcut?name=퇴근')">퇴근</div>
+        <div class="menu-item" onclick="openLink('notes://')">노트</div>
+        <div class="menu-item" onclick="openLink('https://smartlife.tuya.com')">SmartLife</div>
+        <div class="menu-item" onclick="openLink('https://mcdonalds.com.au')">MyMaccas</div>
+        <div class="menu-item" onclick="openLink('https://www.hungryjacks.com.au')">Hungry Jack's</div>
+        <div class="menu-item" onclick="openLink('https://ukg.com')">UKG Pro</div>
+        <div class="menu-item" onclick="openLink('#')">MyISS</div>
+        <div class="menu-item" onclick="openLink('https://www.apple.com')">Safari</div>
+        <div class="menu-item" onclick="openLink('shortcuts://')">단축어</div>
+        <div class="menu-item" onclick="openLink('App-Prefs:root')">세팅</div>
+        <div class="menu-item" onclick="openLink('https://www.aliexpress.com')">알리익스프레스</div>
+        <div class="menu-item" onclick="openLink('files://')">Files</div>
+        <div class="menu-item" onclick="openLink('photos://')">포토</div>
+        <div class="menu-item" onclick="openLink('https://www.webtoons.com')">웹툰</div>
+        <div class="menu-item" onclick="openLink('https://www.millie.co.kr')">밀리의 서재</div>
+        <div class="menu-item" onclick="openLink('https://podcasts.apple.com')">팟캐스트</div>
+        <div class="menu-item" onclick="openLink('#')">줄자</div>
         <div class="menu-item" onclick="openLink('https://x.com')">X</div>
-        <div class="menu-item" onclick="openLink('https://messages.google.com')">MESSAGES</div>
-        <div class="menu-item" onclick="openLink('tel:')">PHONE</div>
-        <div class="menu-item" onclick="openLink('#')">EVERYDAY</div>
-        <div class="menu-item" onclick="openLink('https://tesla.com')">TESLA</div>
-        
-        <!-- 여기에 계속 추가하세요 -->
-        <!-- <div class="menu-item" onclick="openLink('URL')">앱이름</div> -->
+        <div class="menu-item" onclick="openLink('https://scriptable.app')">Scriptable</div>
+        <div class="menu-item" onclick="openLink('https://github.com')">GitHub</div>
+        <div class="menu-item" onclick="openLink('calculator://')">계산기</div>
+        <div class="menu-item" onclick="openLink('#')">Warframe</div>
     </div>
 
     <script>
         function openLink(url) {
             if (url === 'tel:') {
-                window.location.href = url;
+                window.location.href = 'tel:';
+            } else if (url === 'sms:') {
+                window.location.href = 'sms:';
+            } else if (url === 'notes://') {
+                window.location.href = 'notes://';
+            } else if (url === 'App-Prefs:root') {
+                window.location.href = 'App-Prefs:root';
+            } else if (url === 'files://') {
+                window.location.href = 'files://';
+            } else if (url === 'photos://') {
+                window.location.href = 'photos://';
+            } else if (url === 'calculator://') {
+                window.location.href = 'calculator://';
             } else {
                 window.open(url, '_blank');
             }
