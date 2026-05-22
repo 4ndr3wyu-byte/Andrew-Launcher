@@ -26,7 +26,7 @@
         .menu {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 4px;           /* 이전보다 절반으로 줄임 */
             width: 100%;
             max-width: 380px;
         }
@@ -66,8 +66,8 @@
         <div class="menu-item" onclick="openApp('sms:')">메세지</div>
         <div class="menu-item" onclick="openApp('telegram://')">텔레그램</div>
         <div class="menu-item" onclick="openApp('tesla://')">테슬라</div>
-        <div class="menu-item" onclick="openApp('shortcuts://run-shortcut?name=Tabclose')">다끼</div>
-        <div class="menu-item" onclick="openApp('shortcuts://run-shortcut?name=음악틀어')">음악</div>
+        <div class="menu-item" onclick="openApp('shortcuts://run-shortcut?name=퇴근')">퇴근</div>
+        <div class="menu-item" onclick="openApp('notes://')">노트</div>
         <div class="menu-item" onclick="openApp('https://smartlife.tuya.com')">SmartLife</div>
         <div class="menu-item" onclick="openApp('mcdonalds://')">MyMaccas</div>
         <div class="menu-item" onclick="openApp('https://www.hungryjacks.com.au')">Hungry Jack's</div>
@@ -89,18 +89,8 @@
         }
 
         function closeLauncher() {
-            // 방법 1: 빈 페이지로 이동
-            window.location.href = "about:blank";
-            
-            // 방법 2: 조금 더 강하게 홈 화면으로 유도
-            setTimeout(() => {
-                window.close();
-            }, 100);
-            
-            // 방법 3: 백업
-            setTimeout(() => {
-                window.location.href = "about:blank";
-            }, 300);
+            // Tabclose 단축어 실행
+            window.location.href = "shortcuts://run-shortcut?name=Tabclose";
         }
     </script>
 </body>
